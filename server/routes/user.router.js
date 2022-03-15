@@ -20,17 +20,17 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 router.post('/register', (req, res, next) => {
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
-  const fullName = req.body.fullName;
-  const city = req.body.city;
-  const region = req.body.region;
-  const graduation_date = req.body.graduation_date;
-  const needs_ride = req.body.needs_ride;
-  const provide_ride = req.body.provide_ride;
+  // const fullName = req.body.fullName;
+  // const city = req.body.city;
+  // const region = req.body.region;
+  // const graduation_date = req.body.graduation_date;
+  // const needs_ride = req.body.needs_ride;
+  // const provide_ride = req.body.provide_ride;
 
-  const queryText = `INSERT INTO "user" (username, password, fullName, city, region, graduation_date, needs_ride, provide_ride)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id`;
+  const queryText = `INSERT INTO "user" (username, password)
+    VALUES ($1, $2) RETURNING id`;
   pool
-    .query(queryText, [username, password, fullName, city, region, graduation_date, needs_ride, provide_ride])
+    .query(queryText, [username, password])
     .then(() => res.sendStatus(201))
     .catch((err) => {
       console.log('User registration failed: ', err);
@@ -43,6 +43,10 @@ router.post('/register', (req, res, next) => {
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {
+  res.sendStatus(200);
+});
+router.put('/:id', (req, res) => {
+  console.log('in put');
   res.sendStatus(200);
 });
 

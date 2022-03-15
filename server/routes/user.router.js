@@ -45,10 +45,13 @@ router.post('/register', (req, res, next) => {
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {
   res.sendStatus(200);
 });
-router.put('/:id', (req, res) => {
-  console.log('in put');
-  res.sendStatus(200);
-});
+
+// ----- todo: reach a breakpoint in this route from postman
+//----todo: update user with info passed-----
+// router.put('/:id', (req, res) => {
+//   console.log('in put');
+//   res.sendStatus(200);
+// });
 
 // clear all server session information about this user
 router.post('/logout', (req, res) => {

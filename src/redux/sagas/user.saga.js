@@ -24,19 +24,19 @@ function* fetchUser() {
   }
 }
 
-// function* saveUser(action) {
-//   try {
-//     const config = {
-//       headers: { 'Content-Type': 'application/json' },
-//       withCredentials: true,
-//     };
-
-//     const response = yield axios.put(`/api/user/${action.payload.id}`,action.payload );
-//     //yield put({ type: 'SET_USER', payload: response.data });
-//   } catch (error) {
-//     console.log('User get request failed', error);
-//   }
-// }
+function* saveUser(action) {
+  try {
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+   const response =
+     yield axios.put(`/api/user/${action.payload.id}`, action.payload);
+     yield put({ type: 'SET_USER', payload: response.data });
+  } catch (error) {
+    console.log('User get request failed', error);
+  }
+}
 
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);

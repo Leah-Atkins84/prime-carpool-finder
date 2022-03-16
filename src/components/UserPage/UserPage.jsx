@@ -12,7 +12,7 @@ function UserPage() {
   const dispatch = useDispatch();
   const save = (event) => {
     event.preventDefault();
-    // event.stopPropagation()
+    //event.stopPropagation()
     console.log('save my form');
     dispatch({
       type: 'SAVE_USER',
@@ -109,7 +109,7 @@ function UserPage() {
           </label>
         </div>
         <div>
-          <input className="btn" type="submit" name="submit" value="Save" />
+          <input className="btn" type="submit" name="submit" value="save" />
         </div>
       </form>
     </div>

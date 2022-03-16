@@ -30,9 +30,9 @@ function* saveUser(action) {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     };
-   const response =
-     yield axios.put(`/api/user/${action.payload.id}`, action.payload);
-     yield put({ type: 'SET_USER', payload: response.data });
+    const response = yield axios.put(`/api/user/${action.payload.id}`, action.payload, config);
+    yield put({ type: 'SET_USER', payload: response.data  });
+     
   } catch (error) {
     console.log('User save request failed', error);
   }

@@ -17,7 +17,7 @@ function UserPage() {
     dispatch({
       type: 'SAVE_USER',
       payload:{
-         //id: id,
+        id: user.id,
         fullName: fullName,
         city: city,
         region: region,
@@ -44,7 +44,7 @@ function UserPage() {
               name="fullName"
               required
               value={user.fullName}
-              onChange={(event) => setFullName(event.target.value)}
+              //onChange={(event) => setFullName(event.target.value)}
             />
           </label>
         </div>
@@ -56,7 +56,7 @@ function UserPage() {
               name="city"
               required
               value={user.city}
-              onChange={(event) => setCity(event.target.value)}
+              // onChange={(event) => setCity(event.target.value)}
             />
           </label>
         </div>
@@ -68,7 +68,7 @@ function UserPage() {
               name="region"
               required
               value={user.region}
-               onChange={(event) => setRegion(event.target.value)}
+              //  onChange={(event) => setRegion(event.target.value)}
             />
           </label>
         </div>
@@ -80,7 +80,7 @@ function UserPage() {
               name="graduation_date"
               required
               value={user.graduation_date}
-              onChange={(event) => setGraduation_date(event.target.value)}
+              // onChange={(event) => setGraduation_date(event.target.value)}
             />
           </label>
         </div>
@@ -92,7 +92,7 @@ function UserPage() {
               name="needs_ride"
               required
               value={user.needs_ride}
-              onChange={(event) => setNeeds_ride(event.target.value)}
+              // onChange={(event) => setNeeds_ride(event.target.value)}
             />
           </label>
         </div>
@@ -104,7 +104,7 @@ function UserPage() {
               name="provide_ride"
               required
               value={user.provide_ride}
-              onChange={(event) => setProvide_ride(event.target.value)}
+              // onChange={(event) => setProvide_ride(event.target.value)}
             />
           </label>
         </div>

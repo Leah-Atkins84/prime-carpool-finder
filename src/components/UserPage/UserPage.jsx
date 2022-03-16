@@ -43,8 +43,8 @@ function UserPage() {
               type="text"
               name="fullName"
               required
-              value={user.fullName}
-              //onChange={(event) => setFullName(event.target.value)}
+              value={fullName}
+              onChange={(event) => setFullName(event.target.value)}
             />
           </label>
         </div>
@@ -55,8 +55,8 @@ function UserPage() {
               type="text"
               name="city"
               required
-              value={user.city}
-              // onChange={(event) => setCity(event.target.value)}
+              value={city}
+              onChange={(event) => setCity(event.target.value)}
             />
           </label>
         </div>
@@ -67,8 +67,8 @@ function UserPage() {
               type="text"
               name="region"
               required
-              value={user.region}
-              //  onChange={(event) => setRegion(event.target.value)}
+              value={region}
+              onChange={(event) => setRegion(event.target.value)}
             />
           </label>
         </div>
@@ -79,8 +79,8 @@ function UserPage() {
               type="text"
               name="graduation_date"
               required
-              value={user.graduation_date}
-              // onChange={(event) => setGraduation_date(event.target.value)}
+              value={graduation_date}
+              onChange={(event) => setGraduation_date(event.target.value)}
             />
           </label>
         </div>
@@ -91,8 +91,8 @@ function UserPage() {
               type="text"
               name="needs_ride"
               required
-              value={user.needs_ride}
-              // onChange={(event) => setNeeds_ride(event.target.value)}
+              value={needs_ride}
+              onChange={(event) => setNeeds_ride(event.target.value)}
             />
           </label>
         </div>
@@ -103,8 +103,8 @@ function UserPage() {
               type="text"
               name="provide_ride"
               required
-              value={user.provide_ride}
-              // onChange={(event) => setProvide_ride(event.target.value)}
+              value={provide_ride}
+              onChange={(event) => setProvide_ride(event.target.value)}
             />
           </label>
         </div>

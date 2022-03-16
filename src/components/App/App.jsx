@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import CarpoolList from '../CarpoolList/CarpoolList';
+import CarpoolListPage from '../CarpoolListPage/CarpoolListPage';
 
 import './App.css';
 
@@ -34,6 +34,7 @@ function App() {
 
   return (
     <Router>
+      
       <div>
         <Nav />
         <Switch>
@@ -116,8 +117,11 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
+       
         <Footer />
+        <CarpoolListPage />
       </div>
+    
     </Router>
   );
 }

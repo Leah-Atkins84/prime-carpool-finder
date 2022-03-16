@@ -17,7 +17,7 @@ function UserPage() {
     dispatch({
       type: 'SAVE_USER',
       payload:{
-        // id: id,
+         //id: id,
         fullName: fullName,
         city: city,
         region: region,

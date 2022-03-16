@@ -34,7 +34,7 @@ function* saveUser(action) {
      yield axios.put(`/api/user/${action.payload.id}`, action.payload);
      yield put({ type: 'SET_USER', payload: response.data });
   } catch (error) {
-    console.log('User get request failed', error);
+    console.log('User save request failed', error);
   }
 }
 

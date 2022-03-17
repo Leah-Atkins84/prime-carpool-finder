@@ -1,4 +1,4 @@
-import  React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {DataGrid} from "@mui/x-data-grid";
 import {Button} from "@mui/material/";
 import {ThemeProvider, createTheme} from '@mui/material/styles';
@@ -6,8 +6,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { useDispatch, useSelector } from 'react-redux';
-
+import {useDispatch, useSelector} from 'react-redux';
 
 
 const theme = createTheme({
@@ -24,10 +23,10 @@ const theme = createTheme({
 
 function CarpoolListPage() {
     const dispatch = useDispatch();
-    const carpool = useSelector(store=> store.carpool);
+    const carpool = useSelector(store => store.carpool);
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_CARPOOLS' })
+        dispatch({type: 'FETCH_CARPOOLS'})
     }, [dispatch])
 
     console.log('Carpools are:', carpool);
@@ -63,49 +62,50 @@ function CarpoolListPage() {
             headerName: 'Needs Ride',
             headerClassName: 'app-theme--header',
             width: 100,
-            valueGetter: (params) => params.value ? `Yes`: `No`
+            valueGetter: (params) => params.value ? `Yes` : `No`
         }, {
             field: 'provide_ride',
             headerName: 'Provide Ride',
             headerClassName: 'app-theme--header',
             width: 100,
-            valueGetter: (params) => params.value ? `Yes`: `No`
+            valueGetter: (params) => params.value ? `Yes` : `No`
         }
     ];
-    return (<>
-        <ThemeProvider theme={theme}>
-            <Box> {/* <AppBar color="primary"> */}
-                {/* <Toolbar> */}
-                <Typography variant="h4"
-                    //  sx={{ display:"flex", justifyContent:"center" }}
-                >Car pool finder</Typography>
-                {/* <Button color="inherit">Login</Button> */}
-                {/* </Toolbar> */}
-                {/* </AppBar> */} </Box>
-            <Box sx={
-                {
-                    height: 100,
-                    width: 10,
-                    '.app-theme--header': {
-                        backgroundColor: "secondary"
+    return (
+        <>
+            <ThemeProvider theme={theme}>
+                <Box> {/* <AppBar color="primary"> */}
+                    {/* <Toolbar> */}
+                    <Typography variant="h4"
+                        //  sx={{ display:"flex", justifyContent:"center" }}
+                    >Car pool finder</Typography>
+                    {/* <Button color="inherit">Login</Button> */}
+                    {/* </Toolbar> */}
+                    {/* </AppBar> */} </Box>
+                <Box sx={
+                    {
+                        height: 100,
+                        width: 10,
+                        '.app-theme--header': {
+                            backgroundColor: "secondary"
+                        }
                     }
-                }
-            }></Box>
-            <div style={
-                {
-                    height: 400,
-                    width: '100%'
-                }
-            }>
-                <DataGrid 
-                    rows={carpool}
-                    columns={columns}/>
-            </div>
-            {/* <Button variant="contained">
+                }></Box>
+                <div style={
+                    {
+                        height: 400,
+                        width: '100%'
+                    }
+                }>
+                    <DataGrid rows={carpool}
+                        columns={columns}/>
+                </div>
+                {/* <Button variant="contained">
                     Edit User Info
                 </Button> */} </ThemeProvider>
 
-    </>);
+        </>
+    );
 
 
 }

@@ -38,7 +38,7 @@ function CarpoolListPage() {
             field: 'fullName',
             headerName: 'Full Name',
             headerClassName: 'app-theme--header',
-            width: 100
+            width: 120
         },
         {
             field: 'region',
@@ -56,7 +56,7 @@ function CarpoolListPage() {
             field: 'graduation_date',
             headerName: 'Graduation Date',
             headerClassName: 'app-theme--header',
-            width: 110
+            width: 130
         }, {
             field: 'needs_ride',
             headerName: 'Needs Ride',

@@ -61,6 +61,13 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows 
+            exact
+            path="/carpool"
+          >
+            <CarpoolListPage />
+          </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
@@ -119,7 +126,7 @@ function App() {
         </Switch>
        
         <Footer />
-        <CarpoolListPage />
+    
       </div>
     
     </Router>

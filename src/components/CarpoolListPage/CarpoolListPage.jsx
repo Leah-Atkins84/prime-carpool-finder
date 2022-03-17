@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 
 
+
 const theme = createTheme({
     palette: {
         primary: {
@@ -22,6 +23,17 @@ const theme = createTheme({
 
 
 function CarpoolListPage() {
+    const dispatch = useDispatch();
+    const carpool = useSelector(store=> store.carpool);
+
+    useEffect(() => {
+        dispatch({ type: 'FETCH_CARPOOLS' })
+    }, [dispatch])
+
+    console.log('Carpools are:', carpool);
+
+    // const rows = carpool;
+
     const columns = [
         {
             field: 'fullName',
@@ -42,20 +54,22 @@ function CarpoolListPage() {
             width: 100
         },
         {
-            field: 'graduationDate',
+            field: 'graduation_date',
             headerName: 'Graduation Date',
             headerClassName: 'app-theme--header',
             width: 110
         }, {
-            field: 'needsRide',
+            field: 'needs_ride',
             headerName: 'Needs Ride',
             headerClassName: 'app-theme--header',
-            width: 100
+            width: 100,
+            valueGetter: (params) => params.value ? `Yes`: `No`
         }, {
-            field: 'provideRide',
+            field: 'provide_ride',
             headerName: 'Provide Ride',
             headerClassName: 'app-theme--header',
-            width: 100
+            width: 100,
+            valueGetter: (params) => params.value ? `Yes`: `No`
         }
     ];
     return (<>
@@ -83,11 +97,8 @@ function CarpoolListPage() {
                     width: '100%'
                 }
             }>
-                <DataGrid // sx={{display:"flex",
-                    // justifyContent:"center"}}
-                    // display="flex"
-                    // justifyContent="center"
-                    //rows={rows}
+                <DataGrid 
+                    rows={carpool}
                     columns={columns}/>
             </div>
             {/* <Button variant="contained">

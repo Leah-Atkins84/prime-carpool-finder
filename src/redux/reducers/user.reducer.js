@@ -4,8 +4,8 @@ const userReducer = (state = {}, action) => {
       return action.payload;
     case 'SAVE_USER':
       console.log('SAVE USER ACTION');
-      // return action.payload;
-      return state;
+      return action.payload;
+      //return state;
     case 'UNSET_USER':
       return {};
     default:

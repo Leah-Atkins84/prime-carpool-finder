@@ -31,7 +31,7 @@ function* saveUser(action) {
       withCredentials: true,
     };
     const response = yield axios.put(`/api/user/${action.payload.id}`, action.payload, config);
-    yield put({ type: 'SET_USER', payload: response.data  });
+    // yield put({ type: 'SET_USER', payload: response.data  });
      
   } catch (error) {
     console.log('User save request failed', error);

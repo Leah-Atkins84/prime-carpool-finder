@@ -11,9 +11,9 @@ function UserPage() {
     const [needs_ride, setNeeds_ride] = useState(user.needs_ride);
     const [provide_ride, setProvide_ride] = useState(user.provide_ride);
     const dispatch = useDispatch();
+    
     const save = (event) => {
         event.preventDefault();
-        // event.stopPropagation()
         console.log('save my form');
         dispatch({
             type: 'SAVE_USER',

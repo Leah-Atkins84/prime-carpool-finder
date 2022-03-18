@@ -53,7 +53,7 @@ function CarpoolListPage() {
             width: 100
         },
         {
-            field: 'graduation_date',
+            field: 'to_char',
             headerName: 'Graduation Date',
             headerClassName: 'app-theme--header',
             width: 130
@@ -73,6 +73,7 @@ function CarpoolListPage() {
     ];
     return (
         <>
+        <div>
             <ThemeProvider theme={theme}>
                 <Box> {/* <AppBar color="primary"> */}
                     {/* <Toolbar> */}
@@ -95,15 +96,17 @@ function CarpoolListPage() {
                     {
                         height: 400,
                         width: '100%'
+                        
                     }
                 }>
+                  {/* sx={{backgroundColor: "secondary"}} */}
                     <DataGrid rows={carpool}
                         columns={columns}/>
                 </div>
                 {/* <Button variant="contained">
                     Edit User Info
                 </Button> */} </ThemeProvider>
-
+          </div>
         </>
     );
 

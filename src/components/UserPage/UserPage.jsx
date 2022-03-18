@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useDispatch, useSelector} from 'react-redux';
+import DeleteAccountButton from '../DeleteAccountButton/DeleteAccountButton';
 
 function UserPage() {
     const user = useSelector((store) => store.user); // use data from redux
@@ -12,7 +13,7 @@ function UserPage() {
     const [provide_ride, setProvide_ride] = useState(user.provide_ride);
     const dispatch = useDispatch();
     
-    const save = (event) => {
+    const Edit = (event) => {
         event.preventDefault();
         console.log('save my form');
         dispatch({
@@ -38,8 +39,9 @@ function UserPage() {
                 user.id
             }</p>
             <LogOutButton className="btn"/>
+            <DeleteAccountButton className="btn"/>
             <form className="formPanel"
-                onSubmit={save}>
+                onSubmit={Edit}>
                 <div>
                     <label htmlFor="fullName">
                         Full Name:
@@ -73,7 +75,7 @@ function UserPage() {
                 <div>
                     <label htmlFor="graduation_date">
                         Graduation date:
-                        <input type="date" name="graduation_date" required
+                        <input type="text" name="graduation_date" required
                             value={graduation_date}
                             onChange={
                                 (event) => setGraduation_date(event.target.value)
@@ -101,11 +103,11 @@ function UserPage() {
                     </label>
                 </div>
                 <div>
-                    <input className="btn" type="submit" name="submit" value="save"/>
+                    <input className="btn" type="submit" name="submit" value="Edit"/>
                 </div>
-                <div>
+                {/* <div>
                     <input className="btn" type="submit" name="submit" value="Delete Account"/>
-                </div>
+                </div> */}
 
             </form>
         </div>

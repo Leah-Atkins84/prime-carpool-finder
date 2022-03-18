@@ -73,7 +73,7 @@ function UserPage() {
                 <div>
                     <label htmlFor="graduation_date">
                         Graduation date:
-                        <input type="text" name="graduation_date" required
+                        <input type="date" name="graduation_date" required
                             value={graduation_date}
                             onChange={
                                 (event) => setGraduation_date(event.target.value)
@@ -103,6 +103,10 @@ function UserPage() {
                 <div>
                     <input className="btn" type="submit" name="submit" value="save"/>
                 </div>
+                <div>
+                    <input className="btn" type="submit" name="submit" value="Delete Account"/>
+                </div>
+
             </form>
         </div>
     );

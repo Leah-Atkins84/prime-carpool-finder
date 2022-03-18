@@ -5,7 +5,6 @@ const userReducer = (state = {}, action) => {
     case 'SAVE_USER':
       console.log('SAVE USER ACTION');
       return action.payload;
-      //return state;
     case 'UNSET_USER':
       return {};
     default:

@@ -105,10 +105,6 @@ function UserPage() {
                 <div>
                     <input className="btn" type="submit" name="submit" value="Edit"/>
                 </div>
-                {/* <div>
-                    <input className="btn" type="submit" name="submit" value="Delete Account"/>
-                </div> */}
-
             </form>
         </div>
     );

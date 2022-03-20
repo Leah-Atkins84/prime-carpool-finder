@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
+//import { user } from 'pg/lib/defaults';
 
 const theme = createTheme({
   palette: {
@@ -16,14 +17,17 @@ const theme = createTheme({
 });
 
 
-function DeleteAccountButton(props) {
-    const dispatch = useDispatch();
+function DeleteAccountButton() {
+  const dispatch = useDispatch();
+  const deleteUser = () => { 
+  dispatch({ type: 'DELETE_ACCOUNT' })
+}
+
     return (
       <ThemeProvider theme={theme}>
-      <Stack spacing={2} direction="column">
-        <Button variant="contained" color="secondary" className={props.className}
-                onClick={
-                () => dispatch({type: 'DELETE_ACCOUNT'})}>
+      <Stack spacing={2} direction="row">
+        <Button size="small" variant="contained" color="secondary" 
+                onClick={deleteUser}>
                 DELETE ACCOUNT
         </Button>
       </Stack>

@@ -57,13 +57,13 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 });// end put router
 
 //----- Delete user account------------------
-router.delete("/:id", (req, res) => {
-    let queryText = `DELETE FROM "user" WHERE id = $1;`;
-    let queryInsert = req.params.id;
-  
+router.delete("/:id", (req, res) => {  
     if (req.isAuthenticated()) {
+     console.log('Inside delete route', req.user);
+      const userId = req.user.id;
+      const queryText = `DELETE FROM "user" WHERE id = $1;`;
       pool
-        .query(queryText, [queryInsert])
+        .query(queryText, [userId])
         .then((results) => {
           console.log("Success on delete", results);
           res.sendStatus(200);

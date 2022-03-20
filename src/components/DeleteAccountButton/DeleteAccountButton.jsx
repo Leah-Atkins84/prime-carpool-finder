@@ -1,9 +1,8 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
-//import { user } from 'pg/lib/defaults';
 
 const theme = createTheme({
   palette: {
@@ -18,11 +17,16 @@ const theme = createTheme({
 
 
 function DeleteAccountButton() {
+  const user = useSelector((store) => store.user); // use data from redux
   const dispatch = useDispatch();
   const deleteUser = () => { 
-  dispatch({ type: 'DELETE_ACCOUNT' })
-}
-
+    return dispatch({
+      type: 'DELETE_ACCOUNT', 
+      payload: {
+        id: user.id
+      }
+    })
+  }
     return (
       <ThemeProvider theme={theme}>
       <Stack spacing={2} direction="row">

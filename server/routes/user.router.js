@@ -11,9 +11,8 @@ router.get('/', rejectUnauthenticated, (req, res) => { // Send back user object 
     res.send(req.user);
 });
 
-// Handles POST request with new user data
-// The only thing different from this and every other post we've seen
-// is that the password gets encrypted before being inserted
+// -----Handles POST request with new user data----------
+// -----Password gets encrypted before being inserted
 router.post('/register',  (req, res, next) => {
     const username = req.body.username;
     const password = encryptLib.encryptPassword(req.body.password);
@@ -33,7 +32,7 @@ router.post('/login', userStrategy.authenticate('local'), (req, res) => {
     res.sendStatus(200);
 });
 
-// to update the user information
+//------Update the user information-------------
 router.put('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = `UPDATE "user"
       SET "fullName"= $1, "city"= $2, "region" = $3, "graduation_date" = $4, "needs_ride" = $5, "provide_ride" = $6
@@ -56,6 +55,27 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
         res.sendStatus(500);
     })
 });// end put router
+
+//----- Delete user account------------------
+router.delete("/:id", (req, res) => {  
+    if (req.isAuthenticated()) {
+     console.log('Inside delete route', req.user);
+      const userId = req.user.id;
+      const queryText = `DELETE FROM "user" WHERE id = $1;`;
+      pool
+        .query(queryText, [userId])
+        .then((results) => {
+          console.log("Success on delete", results);
+          res.sendStatus(200);
+        })
+        .catch((err) => {
+          console.log("Error on delete,", err);
+          res.sendStatus(500);
+        });
+    } else {
+      res.sendStatus(403);
+    }
+  });
 
 // clear all server session information about this user
 router.post('/logout', (req, res) => { // Use passport's built-in method to log out the user

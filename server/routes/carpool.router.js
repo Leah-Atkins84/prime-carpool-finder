@@ -11,7 +11,8 @@ const router = express.Router();
       console.log('/carpool GET route');
       console.log('is authenticated', req.isAuthenticated());
       console.log('user', req.user);
-      const queryText = `SELECT * FROM "user";`;
+      const queryText = `SELECT "id", "username", "password",  "fullName", "city", "region", TO_CHAR("graduation_date", 'MM-DD-YYYY'), "needs_ride", "provide_ride"
+      FROM "user";`;
       pool.query(queryText).then((result) => {
           res.send(result.rows);
       }).catch((error) => {

@@ -21,6 +21,7 @@ function UserPage() {
       type: 'SAVE_USER',
       payload: {
         id: user.id,
+        username: user.username,
         fullName: fullName,
         city: city,
         region: region,

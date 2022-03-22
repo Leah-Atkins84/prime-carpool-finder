@@ -12,7 +12,9 @@ CREATE TABLE "user" (
     "region" VARCHAR (100) ,
     "graduation_date" DATE ,
     "needs_ride" BOOLEAN ,
-    "provide_ride" BOOLEAN
+    "provide_ride" BOOLEAN,
+    "lat" NUMBER,
+    "long" NUMBER
 );
 
 

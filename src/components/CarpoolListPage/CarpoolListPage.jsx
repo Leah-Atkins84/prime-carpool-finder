@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import {useDispatch, useSelector} from 'react-redux';
-
+import Map from '../Map/Map';
 
 const theme = createTheme({
     palette: {
@@ -107,6 +107,7 @@ function CarpoolListPage() {
                     Edit User Info
                 </Button> */} </ThemeProvider>
           </div>
+          <Map />
         </>
     );
 

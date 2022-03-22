@@ -84,7 +84,7 @@ function UserPage() {
           <label htmlFor="graduation_date">
             Graduation date:
             <input
-              type="text"
+              type="date"
               name="graduation_date"
               required
               value={graduation_date}

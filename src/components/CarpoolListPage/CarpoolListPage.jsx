@@ -53,7 +53,7 @@ function CarpoolListPage() {
             width: 100
         },
         {
-            field: 'to_char',
+            field: 'date',
             headerName: 'Graduation Date',
             headerClassName: 'app-theme--header',
             width: 130
@@ -76,13 +76,21 @@ function CarpoolListPage() {
         <div>
             <ThemeProvider theme={theme}>
                 <Box 
-                sx={{height: 10, width: 10}}
+                sx={{height: 10, width: 10,
+                  '& .app-theme--header':{
+                    backgroundColor: "secondary",
+                  },
+                }}
                 ></Box>
                 <div style={
                     {
                         height: 400,
-                        width: '70%',
-                        padding: 10
+                        width: '100%',
+                        padding: 10,
+                        backgroundColor: "secondary"
+                        // '& .app-theme--header':{
+                        //   backgroundColor: "secondary",
+                        // },
                         // color="secondary"
                         
                     }

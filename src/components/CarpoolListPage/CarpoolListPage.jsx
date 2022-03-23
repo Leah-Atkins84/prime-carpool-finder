@@ -75,32 +75,20 @@ function CarpoolListPage() {
         <>
         <div>
             <ThemeProvider theme={theme}>
-                <Box> {/* <AppBar color="primary"> */}
-                    {/* <Toolbar> */}
-                    <Typography variant="h4"
-                        //  sx={{ display:"flex", justifyContent:"center" }}
-                    >Car pool finder</Typography>
-                    {/* <Button color="inherit">Login</Button> */}
-                    {/* </Toolbar> */}
-                    {/* </AppBar> */} </Box>
-                <Box sx={
-                    {
-                        height: 100,
-                        width: 10,
-                        '.app-theme--header': {
-                            backgroundColor: "secondary"
-                        }
-                    }
-                }></Box>
+                <Box 
+                sx={{height: 10, width: 10}}
+                ></Box>
                 <div style={
                     {
                         height: 400,
-                        width: '100%'
+                        width: '70%',
+                        padding: 10
+                        // color="secondary"
                         
                     }
                 }>
-                  {/* sx={{backgroundColor: "secondary"}} */}
-                    <DataGrid rows={carpool}
+                  {/*  */}
+                    <DataGrid sx={{theme: "secondary"}} rows={carpool}
                         columns={columns}/>
                 </div>
                 {/* <Button variant="contained">

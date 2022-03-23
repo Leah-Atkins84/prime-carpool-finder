@@ -31,7 +31,7 @@ function Nav() {
   return (
     <ThemeProvider theme={theme}>
     <div className="nav">
-       <Stack direction="row" spacing={2}>
+       <Stack direction="row" spacing={2} color="primary">
       <Link to="/home">
         <Avatar alt="prime" src="https://i0.wp.com/www.dickpolipnick.com/wp-content/uploads/2020/12/Prime-Academy-Logo-bw-2.png?fit=2560%2C1280&ssl=1"
         sx={{width: 100, height: 100}}>
@@ -41,7 +41,7 @@ function Nav() {
       
       </Stack>
       <Typography
-         className="nav-title">Carpool Finder
+         className="nav-title" color="black" variant="h2">Carpool Finder
          <DirectionsCarIcon/>
         </Typography>
    

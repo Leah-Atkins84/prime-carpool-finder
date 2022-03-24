@@ -53,12 +53,12 @@ function Map() {
   }, [dispatch])
 
   // Adding user locations to the map
-  if (carpool & map.current) { 
+  if (carpool && map.current) { 
     carpool.map(user => {
       const marker = new mapboxgl.Marker().setLngLat([user.long, user.lat]).addTo(map.current)
     })
   }
-  console.log(carpool);
+ 
   // useEffect(() => {
   // if (map.current)
   //     return; 

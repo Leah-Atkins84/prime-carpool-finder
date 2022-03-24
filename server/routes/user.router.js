@@ -35,7 +35,7 @@ router.post('/login', userStrategy.authenticate('local'), (req, res) => {
 //------Update the user information-------------
 router.put('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = `UPDATE "user"
-      SET "fullName"= $1, "city"= $2, "region" = $3, "graduation_date" = $4, "needs_ride" = $5, "provide_ride" = $6
+      SET "fullName"= $1, "city"= $2, "region" = $3, "graduation_date" = $4, "needs_ride" = $5, "provide_ride" = $6, "lat" = $8, "long" = $9
       WHERE id = $7;`;
 
     const queryValues = [
@@ -45,7 +45,9 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
         req.body.graduation_date,
         req.body.needs_ride,
         req.body.provide_ride,
-        req.params.id
+        req.params.id,
+        req.body.latitude,
+        req.body.longitude
     ];
 
     pool.query(queryText, queryValues).then(() => {

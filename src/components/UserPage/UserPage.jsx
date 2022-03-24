@@ -11,8 +11,17 @@ function UserPage() {
   const [graduation_date, setGraduation_date] = useState(user.graduation_date);
   const [needs_ride, setNeeds_ride] = useState(user.needs_ride);
   const [provide_ride, setProvide_ride] = useState(user.provide_ride);
+  const [latitude, setLatitude] = useState(user.latitude);
+  const [longitude, setLongitude] = useState(user.longitude);
   const dispatch = useDispatch();
 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords);
+      setLatitude(position.coords.latitude)
+      setLongitude(position.coords.longitude)
+    })
+  }
   // Save button handler
   const Save = (event) => {
     event.preventDefault();
@@ -27,7 +36,9 @@ function UserPage() {
         region: region,
         graduation_date: graduation_date,
         needs_ride: needs_ride,
-        provide_ride: provide_ride
+        provide_ride: provide_ride,
+        latitude: latitude,
+        longitude: longitude
       }
     })
   } // end save user
@@ -113,6 +124,30 @@ function UserPage() {
               required
               value={provide_ride}
               onChange={(event) => setProvide_ride(event.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="latitude">
+            Latitude:
+            <input
+              type="text"
+              name="latitude"
+              readOnly
+              value={latitude}
+              onChange={(event) => setLatitude(event.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="longitude">
+            Longitude:
+            <input
+              type="text"
+              name="longitude"
+              readOnly
+              value={longitude}
+              onChange={(event) => setLongitude(event.target.value)}
             />
           </label>
         </div>

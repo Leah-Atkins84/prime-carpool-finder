@@ -45,11 +45,6 @@ function Map() {
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
     });
-
-    // Adding user locations to the map
-    // carpool.map(user => {
-    //   const marker = new mapboxgl.Marker().setLngLat([user.longitude, user.latitude]).addTo(map.current)
-    // })
   }, [dispatch])
 
   // Adding user locations to the map
@@ -59,41 +54,6 @@ function Map() {
     })
   }
  
-  // useEffect(() => {
-  // if (map.current)
-  //     return; 
-
-  // // initialize map only once
-  // map.current = new mapboxgl.Map({
-  //     container: mapContainer.current,
-  //     style: 'mapbox://styles/mapbox/streets-v11',
-  //     center: [
-  //       lng, lat
-  //     ],
-  //     zoom: zoom
-  // });
-
-  // // Add zoom and rotation controls to the map.
-  // map.current.addControl(new mapboxgl.NavigationControl());
-
-  // map.current.addControl(geocoder);
-  // carpool.map(user => {
-  //     const marker = new mapboxgl.Marker().setLngLat([user.longitude, user.latitude]).addTo(map.current)
-  // })
-  // });
-
-  // useEffect(() => {
-  // if (! map.current)
-  //     return;
-
-  // // wait for map to initialize
-  // map.current.on('move', () => {
-  //     setLng(map.current.getCenter().lng.toFixed(4));
-  //     setLat(map.current.getCenter().lat.toFixed(4));
-  //     setZoom(map.current.getZoom().toFixed(2));
-  // });
-  // });
-
   return (
     <div>
       <div className="map-sidebar">

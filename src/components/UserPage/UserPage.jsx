@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useDispatch, useSelector} from 'react-redux';
 import DeleteAccountButton from '../DeleteAccountButton/DeleteAccountButton';
+import {Button} from "@mui/material/";
 
 function UserPage() {
   const user = useSelector((store) => store.user); // use data from redux
@@ -52,9 +53,9 @@ function UserPage() {
         user.id
       }</p>
       <LogOutButton className="btn"/>
-      <DeleteAccountButton className="btn"/>
       <form className="formPanel"
         onSubmit={Save}>
+          <h3>Edit user information here:</h3>
         <div>
           <label htmlFor="fullName">
             Full Name:
@@ -95,7 +96,7 @@ function UserPage() {
           <label htmlFor="graduation_date">
             Graduation date:
             <input
-              type="text"
+              type="date"
               name="graduation_date"
               required
               value={graduation_date}
@@ -128,6 +129,7 @@ function UserPage() {
           </label>
         </div>
         <div>
+          <Button></Button>
           <label htmlFor="latitude">
             Latitude:
             <input
@@ -153,6 +155,9 @@ function UserPage() {
         </div>
         <div>
           <input className="btn" type="submit" name="submit" value="Save"/>
+        </div>
+        <div>
+        <DeleteAccountButton className="btn"/>
         </div>
       </form>
     </div>

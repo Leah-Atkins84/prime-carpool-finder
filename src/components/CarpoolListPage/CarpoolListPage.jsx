@@ -53,7 +53,7 @@ function CarpoolListPage() {
             width: 100
         },
         {
-            field: 'to_char',
+            field: 'date',
             headerName: 'Graduation Date',
             headerClassName: 'app-theme--header',
             width: 130
@@ -75,32 +75,28 @@ function CarpoolListPage() {
         <>
         <div>
             <ThemeProvider theme={theme}>
-                <Box> {/* <AppBar color="primary"> */}
-                    {/* <Toolbar> */}
-                    <Typography variant="h4"
-                        //  sx={{ display:"flex", justifyContent:"center" }}
-                    >Car pool finder</Typography>
-                    {/* <Button color="inherit">Login</Button> */}
-                    {/* </Toolbar> */}
-                    {/* </AppBar> */} </Box>
-                <Box sx={
-                    {
-                        height: 100,
-                        width: 10,
-                        '.app-theme--header': {
-                            backgroundColor: "secondary"
-                        }
-                    }
-                }></Box>
+                <Box 
+                sx={{height: 10, width: 10,
+                  '& .app-theme--header':{
+                    backgroundColor: "secondary",
+                  },
+                }}
+                ></Box>
                 <div style={
                     {
                         height: 400,
-                        width: '100%'
+                        width: '100%',
+                        padding: 10,
+                        backgroundColor: "secondary"
+                        // '& .app-theme--header':{
+                        //   backgroundColor: "secondary",
+                        // },
+                        // color="secondary"
                         
                     }
                 }>
-                  {/* sx={{backgroundColor: "secondary"}} */}
-                    <DataGrid rows={carpool}
+                  {/*  */}
+                    <DataGrid sx={{theme: "secondary"}} rows={carpool}
                         columns={columns}/>
                 </div>
                 {/* <Button variant="contained">

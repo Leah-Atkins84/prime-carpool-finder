@@ -29,10 +29,6 @@ function CarpoolListPage() {
         dispatch({type: 'FETCH_CARPOOLS'})
     }, [dispatch])
 
-    console.log('Carpools are:', carpool);
-
-    // const rows = carpool;
-
     const columns = [
         {
             field: 'fullName',
@@ -53,7 +49,7 @@ function CarpoolListPage() {
             width: 100
         },
         {
-            field: 'date',
+            field: 'graduation_date',
             headerName: 'Graduation Date',
             headerClassName: 'app-theme--header',
             width: 130

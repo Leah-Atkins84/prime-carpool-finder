@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useDispatch, useSelector} from 'react-redux';
 import DeleteAccountButton from '../DeleteAccountButton/DeleteAccountButton';
 import {Button} from "@mui/material/";
+import moment from 'moment';
 
 function UserPage() {
   const user = useSelector((store) => store.user); // use data from redux
@@ -18,7 +19,6 @@ function UserPage() {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords);
       setLatitude(position.coords.latitude)
       setLongitude(position.coords.longitude)
     })
@@ -26,7 +26,6 @@ function UserPage() {
   // Save button handler
   const Save = (event) => {
     event.preventDefault();
-    console.log('save my form');
     dispatch({
       type: 'SAVE_USER',
       payload: {
@@ -99,7 +98,7 @@ function UserPage() {
               type="date"
               name="graduation_date"
               required
-              value={graduation_date}
+              value={moment(graduation_date).format('YYYY-MM-DD')}
               onChange={(event) => setGraduation_date(event.target.value)}
             />
           </label>

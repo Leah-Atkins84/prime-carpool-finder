@@ -9,11 +9,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibGVhaHByaW1lciIsImEiOiJjbDExZzYzb2IwM3N4M2ltd
 
 
 function Map() {
+  const user = useSelector((store) => store.user); // use data from redux
   const geocoder = new MapboxGeocoder({accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl});
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-93.2501);
-  const [lat, setLat] = useState(44.9362);
+  const [lng, setLng] = useState(user.long);
+  const [lat, setLat] = useState(user.lat);
   const [zoom, setZoom] = useState(9);
   const carpool = useSelector(store => store.carpool);
   const dispatch = useDispatch();

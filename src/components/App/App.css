@@ -110,3 +110,7 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+#grad{
+  background-image: linear-gradient(rgb(247, 244, 244), rgb(7, 231, 231));
+}

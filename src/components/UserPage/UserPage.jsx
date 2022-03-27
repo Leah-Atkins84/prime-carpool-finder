@@ -2,13 +2,21 @@ import React, {useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useDispatch, useSelector} from 'react-redux';
 import DeleteAccountButton from '../DeleteAccountButton/DeleteAccountButton';
-import {Button} from "@mui/material/";
 import moment from 'moment';
-import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
+import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+// const Alert = React.forwardRef(function Alert(props, ref) {
+//   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+// });
 
 
 
@@ -23,6 +31,20 @@ function UserPage() {
   const [latitude, setLatitude] = useState(user.latitude);
   const [longitude, setLongitude] = useState(user.longitude);
   const dispatch = useDispatch();
+
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -61,7 +83,8 @@ function UserPage() {
       <LogOutButton className="btn"/>
       <Box>
       <form className="formPanel"
-        onSubmit={Save}>
+           onSubmit={Save}
+        >
         <div>
         <h3>Edit user information here:</h3>
         <InputLabel htmlFor="component-outlined">Full Name:</InputLabel>
@@ -149,7 +172,20 @@ function UserPage() {
           </label>
         </div>
         <div>
-          <Input className="btn" type="submit" name="submit" value="Save"/>
+          {/* <SaveButton  /> */}
+          {/* <input className="btn"/> */}
+
+            {/* <Stack spacing={2} sx={{ width: '100%' }}>
+              <Button variant="contained" onClick={handleClick}  onSubmit={Save} >Save</Button> */}
+      <input className="btn" type="submit" name="submit" value="save"/>
+  
+      {/* <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          This is a success message!
+        </Alert>
+      </Snackbar>
+      </Stack> */}
+      
         </div>
         <div>
         <DeleteAccountButton className="btn"/>

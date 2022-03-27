@@ -77,149 +77,116 @@ function UserPage() {
 
   return (
     <ThemeProvider theme={theme}>
-    <div className="container">
-      <h2>Welcome, {
-        user.username
-      }!</h2>
-      <p>Your ID is: {
-        user.id
-      }</p>
-      <LogOutButton className="btn"/>
-  
-      <Box component="form" sx={{ borderRadius: 5, width: 700, height: 400, border: '1px solid black', 
-       display: "flex",
-       flexWrap: "wrap",
-        justifyContent: "center"}}>
-      {/* <form className="formPanel"
-           onSubmit={Save}
-        > */}
-        
-        
+      <div className="container">
+        <h2>Welcome, {
+          user.username
+        }!</h2>
+        <p>Your ID is: {
+          user.id
+        }</p>
+        <LogOutButton className="btn"/>
         <h3>Edit user information here:</h3>
-        <Box mb={2}>
-        <FormControl >
-        <InputLabel htmlFor="component-outlined">Full Name:</InputLabel>
-          <OutlinedInput
-              id="component-outlined"
-              label="fullName"
-              required
-              value={fullName}
-              onChange={(event) => setFullName(event.target.value)}
-            />
-        </FormControl>
-        </Box>
-        <Box mb={2}>
-        <FormControl>
-        <InputLabel htmlFor="component-outlined">City:</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              label="city"
-              required
-              value={city}
-              onChange={(event) => setCity(event.target.value)}
-            />
-         </FormControl>
-         </Box>
-         <Box mb={2}>
-        <FormControl>
-        <InputLabel htmlFor="component-outlined">Region:</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              label="region"
-              required
-              value={region}
-              onChange={(event) => setRegion(event.target.value)}
-            />
-         </FormControl>
-        </Box>
-        <Box mb={2}>
-        <FormControl>
-        <InputLabel htmlFor="component-outlined">Graduation Date:</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              label="Graduation Date"
-              type="date"
-              required
-              value={moment(graduation_date).format('YYYY-MM-DD')}
-              onChange={(event) => setGraduation_date(event.target.value)}
-            />
-       </FormControl>
-         </Box>
-         <Box mb={2}>
-        <FormControl>
-        <InputLabel htmlFor="component-outlined">Needs ride:</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              label="Graduation Date"
-                required
-                value={needs_ride}
-                onChange={(event) => setNeeds_ride(event.target.value)}
-              />
-        </FormControl>
-         </Box>
-         <Box mb={2}>
-        <FormControl>
-        <InputLabel htmlFor="component-outlined">Provide Ride:</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              label="Provide ride"
-              required
-              value={provide_ride}
-              onChange={(event) => setProvide_ride(event.target.value)}
-            />
-        </FormControl>
-         </Box>
-      
-        {/* <div>
-          <label htmlFor="latitude">
-            Latitude:
-            <input
-              type="text"
-              name="latitude"
-              readOnly
-              value={latitude}
-              onChange={(event) => setLatitude(event.target.value)}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="longitude">
-            Longitude:
-            <input
-              type="text"
-              name="longitude"
-              readOnly
-              value={longitude}
-              onChange={(event) => setLongitude(event.target.value)}
-            />
-          </label>
-        </div> */}
-        {/* <div> */}
+        <Box component="form"
+          sx={
+            {
+              borderRadius: 5,
+              width: 700,
+              height: 400,
+              border: '1px solid black',
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center"
+            }
+        }>
 
-          {/* <SaveButton  /> */}
-          {/* <input className="btn"/> */}
-          {/* <Button variant="contained" onClick={handleClick}>Save</Button>  */}
-            {/* <Stack spacing={2} sx={{ width: '100%' }}> */}
           
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          <Button color="primary"  onClick={Save}>Save</Button>
-        </Alert>
-      </Snackbar>
-      {/* </Stack> */}
-      
-  
-   
-     <Box>
-        <Button sx={{margin: 1 }} variant="contained" onClick={handleClick}>Save</Button> 
-    
-        <DeleteAccountButton className="btn"/>
+          <Box mb={2}>
+            <FormControl>
+              <InputLabel htmlFor="component-outlined">Full Name:</InputLabel>
+              <OutlinedInput id="component-outlined" label="fullName" required
+                value={fullName}
+                onChange={
+                  (event) => setFullName(event.target.value)
+                }/>
+            </FormControl>
+          </Box>
+          <Box mb={2}>
+            <FormControl>
+              <InputLabel htmlFor="component-outlined">City:</InputLabel>
+              <OutlinedInput id="component-outlined" label="city" required
+                value={city}
+                onChange={
+                  (event) => setCity(event.target.value)
+                }/>
+            </FormControl>
+          </Box>
+          <Box mb={2}>
+            <FormControl>
+              <InputLabel htmlFor="component-outlined">Region:</InputLabel>
+              <OutlinedInput id="component-outlined" label="region" required
+                value={region}
+                onChange={
+                  (event) => setRegion(event.target.value)
+                }/>
+            </FormControl>
+          </Box>
+          <Box mb={2}>
+            <FormControl>
+              <InputLabel htmlFor="component-outlined">Graduation Date:</InputLabel>
+              <OutlinedInput id="component-outlined" label="Graduation Date" type="date" required
+                value={
+                  moment(graduation_date).format('YYYY-MM-DD')
+                }
+                onChange={
+                  (event) => setGraduation_date(event.target.value)
+                }/>
+            </FormControl>
+          </Box>
+          <Box mb={2}>
+            <FormControl>
+              <InputLabel htmlFor="component-outlined">Needs ride:</InputLabel>
+              <OutlinedInput id="component-outlined" label="Graduation Date" required
+                value={needs_ride}
+                onChange={
+                  (event) => setNeeds_ride(event.target.value)
+                }/>
+            </FormControl>
+          </Box>
+          <Box mb={2}>
+            <FormControl>
+              <InputLabel htmlFor="component-outlined">Provide Ride:</InputLabel>
+              <OutlinedInput id="component-outlined" label="Provide ride" required
+                value={provide_ride}
+                onChange={
+                  (event) => setProvide_ride(event.target.value)
+                }/>
+            </FormControl>
+          </Box>
+          <Snackbar open={open}
+            autoHideDuration={6000}
+            onClose={handleClose}>
+            <Alert onClose={handleClose}
+              severity="success"
+              sx={
+                {width: '100%'}
+            }>
+              <Button color="primary"
+                onClick={Save}>Save</Button>
+            </Alert>
+          </Snackbar>
+          <Box>
+            <Button sx={
+                {margin: 1}
+              }
+              variant="contained"
+              onClick={handleClick}>Save</Button>
+           
+          </Box>
         </Box>
-  
-
-      </Box>
-    
-    </div>
+        <div> Would you like to delete your account?
+        <DeleteAccountButton className="btn"/>
+        </div>
+      </div>
     </ThemeProvider>
   );
 }

@@ -41,7 +41,7 @@ function Nav() {
       
       </Stack>
       <Typography
-         className="nav-title" color="black" variant="h2">Carpool Finder
+         className="nav-title" color="black" variant="h3">Carpool Finder
          <DirectionsCarIcon/>
         </Typography>
    
@@ -54,6 +54,9 @@ function Nav() {
             Login / Register
           </Link>
         )}
+           <Link className="navLink" to="/about">
+          About
+        </Link>
 
         {/* If a user is logged in, show these links */}
         {user.id && (
@@ -66,17 +69,12 @@ function Nav() {
             </Link>
             <Link className="navLink" to="/carpool">
              Carpool List
-             
-             <FactCheckIcon/>
             </Link>
 
             <LogOutButton className="navLink" />
           </>
         )}
 
-        <Link className="navLink" to="/about">
-          About
-        </Link>
       </div>
     </div>
     </ThemeProvider>

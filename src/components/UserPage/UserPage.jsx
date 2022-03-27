@@ -4,6 +4,13 @@ import {useDispatch, useSelector} from 'react-redux';
 import DeleteAccountButton from '../DeleteAccountButton/DeleteAccountButton';
 import {Button} from "@mui/material/";
 import moment from 'moment';
+import FormControl from '@mui/material/FormControl';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Box from '@mui/material/Box';
+
+
 
 function UserPage() {
   const user = useSelector((store) => store.user); // use data from redux
@@ -52,83 +59,72 @@ function UserPage() {
         user.id
       }</p>
       <LogOutButton className="btn"/>
+      <Box>
       <form className="formPanel"
         onSubmit={Save}>
-          <h3>Edit user information here:</h3>
         <div>
-          <label htmlFor="fullName">
-            Full Name:
-            <input
-              type="text"
-              name="fullName"
+        <h3>Edit user information here:</h3>
+        <InputLabel htmlFor="component-outlined">Full Name:</InputLabel>
+          <OutlinedInput
+              id="component-outlined"
+              label="fullName"
               required
               value={fullName}
               onChange={(event) => setFullName(event.target.value)}
             />
-          </label>
         </div>
         <div>
-          <label htmlFor="city">
-            City:
-            <input
-              type="text"
-              name="city"
+        <InputLabel htmlFor="component-outlined">City:</InputLabel>
+            <OutlinedInput
+              id="component-outlined"
+              label="city"
               required
               value={city}
               onChange={(event) => setCity(event.target.value)}
             />
-          </label>
         </div>
         <div>
-          <label htmlFor="region">
-            Region:
-            <input
-              type="text"
-              name="region"
+        <InputLabel htmlFor="component-outlined">Region:</InputLabel>
+            <OutlinedInput
+              id="component-outlined"
+              label="region"
               required
               value={region}
               onChange={(event) => setRegion(event.target.value)}
             />
-          </label>
         </div>
         <div>
-          <label htmlFor="graduation_date">
-            Graduation date:
-            <input
+        <InputLabel htmlFor="component-outlined">Graduation Date:</InputLabel>
+            <OutlinedInput
+              id="component-outlined"
+              label="Graduation Date"
               type="date"
-              name="graduation_date"
               required
               value={moment(graduation_date).format('YYYY-MM-DD')}
               onChange={(event) => setGraduation_date(event.target.value)}
             />
-          </label>
         </div>
         <div>
-          <label htmlFor="needs_ride">
-              Needs ride:
-              <input
-                type="text"
-                name="needs_ride"
+        <InputLabel htmlFor="component-outlined">Needs ride:</InputLabel>
+            <OutlinedInput
+              id="component-outlined"
+              label="Graduation Date"
                 required
                 value={needs_ride}
                 onChange={(event) => setNeeds_ride(event.target.value)}
               />
-          </label>
         </div>
         <div>
-          <label htmlFor="provide_ride">
-            Provide ride:
-            <input
-              type="text"
-              name="provide_ride"
+        <InputLabel htmlFor="component-outlined">Provide Ride:</InputLabel>
+            <OutlinedInput
+              id="component-outlined"
+              label="Provide ride"
               required
               value={provide_ride}
               onChange={(event) => setProvide_ride(event.target.value)}
             />
-          </label>
         </div>
         <div>
-          <Button></Button>
           <label htmlFor="latitude">
             Latitude:
             <input
@@ -153,12 +149,13 @@ function UserPage() {
           </label>
         </div>
         <div>
-          <input className="btn" type="submit" name="submit" value="Save"/>
+          <Input className="btn" type="submit" name="submit" value="Save"/>
         </div>
         <div>
         <DeleteAccountButton className="btn"/>
         </div>
       </form>
+      </Box>
     </div>
   );
 }

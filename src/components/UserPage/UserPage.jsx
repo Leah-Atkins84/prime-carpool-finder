@@ -12,12 +12,6 @@ import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
-
-// const Alert = React.forwardRef(function Alert(props, ref) {
-//   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-// });
-
 
 
 function UserPage() {
@@ -81,12 +75,15 @@ function UserPage() {
         user.id
       }</p>
       <LogOutButton className="btn"/>
-      <Box>
-      <form className="formPanel"
+      <Box component="form" sx={{ borderRadius: 5, width: 300, height: 700, border: '1px solid black'}}>
+      {/* <form className="formPanel"
            onSubmit={Save}
-        >
-        <div>
+        > */}
+        
+        
         <h3>Edit user information here:</h3>
+        <Box mb={2}>
+        <FormControl >
         <InputLabel htmlFor="component-outlined">Full Name:</InputLabel>
           <OutlinedInput
               id="component-outlined"
@@ -95,8 +92,9 @@ function UserPage() {
               value={fullName}
               onChange={(event) => setFullName(event.target.value)}
             />
-        </div>
-        <div>
+        </FormControl>
+        </Box>
+        <FormControl>
         <InputLabel htmlFor="component-outlined">City:</InputLabel>
             <OutlinedInput
               id="component-outlined"
@@ -105,7 +103,7 @@ function UserPage() {
               value={city}
               onChange={(event) => setCity(event.target.value)}
             />
-        </div>
+         </FormControl>
         <div>
         <InputLabel htmlFor="component-outlined">Region:</InputLabel>
             <OutlinedInput
@@ -172,25 +170,24 @@ function UserPage() {
           </label>
         </div>
         <div>
+
           {/* <SaveButton  /> */}
           {/* <input className="btn"/> */}
-
-            {/* <Stack spacing={2} sx={{ width: '100%' }}>
-              <Button variant="contained" onClick={handleClick}  onSubmit={Save} >Save</Button> */}
-      <input className="btn" type="submit" name="submit" value="save"/>
-  
-      {/* <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Button variant="contained" onClick={handleClick}>Save</Button> 
+            <Stack spacing={2} sx={{ width: '100%' }}>
+          
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          This is a success message!
+          <Button onClick={Save}>Save</Button>
         </Alert>
       </Snackbar>
-      </Stack> */}
+      </Stack>
       
         </div>
         <div>
         <DeleteAccountButton className="btn"/>
         </div>
-      </form>
+      {/* </form> */}
       </Box>
     </div>
   );

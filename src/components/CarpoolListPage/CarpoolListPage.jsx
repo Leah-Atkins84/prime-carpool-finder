@@ -27,12 +27,12 @@ function CarpoolListPage() {
         {
             field: 'city',
             headerName: 'City',
-            width: 100
+            width: 130
         },
         {
             field: 'graduation_date',
             headerName: 'Graduation Date',
-            width: 130
+            width: 150
         }, {
             field: 'needs_ride',
             headerName: 'Needs Ride',

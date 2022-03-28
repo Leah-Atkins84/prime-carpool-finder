@@ -5,15 +5,10 @@ import './Nav.css';
 import { useSelector } from 'react-redux';
 import Typography from '@mui/material/Typography';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
-import FactCheckIcon from '@mui/icons-material/FactCheck';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import '@fontsource/roboto/300.css';
-// import '@fontsource/roboto/400.css';
-// import '@fontsource/roboto/500.css';
-// import '@fontsource/roboto/700.css';
+
 
 function Nav() {
   const user = useSelector((store) => store.user);

@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import {useDispatch, useSelector} from 'react-redux';
 import DeleteAccountButton from '../DeleteAccountButton/DeleteAccountButton';
 import moment from 'moment';
-import Input from '@mui/material/Input';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
@@ -35,7 +32,7 @@ function UserPage() {
   const [longitude, setLongitude] = useState(user.longitude);
   const dispatch = useDispatch();
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // states for alerts
 
   const handleClick = () => {
     setOpen(true);
@@ -45,7 +42,6 @@ function UserPage() {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
   };
 
@@ -84,23 +80,23 @@ function UserPage() {
         <p>Your ID is: {
           user.id
         }</p>
-        <LogOutButton className="btn"/>
         <h3>Edit user information here:</h3>
         <Box component="form"
           sx={
             {
+              margin: 5,
               borderRadius: 5,
               width: 700,
-              height: 400,
+              height: 200,
               border: '1px solid black',
               display: "flex",
               flexWrap: "wrap",
-              justifyContent: "center"
+              justifyContent: "space-evenly"
             }
         }>
 
           
-          <Box mb={2}>
+          <Box sx={{p: 2}}>
             <FormControl>
               <InputLabel htmlFor="component-outlined">Full Name:</InputLabel>
               <OutlinedInput id="component-outlined" label="fullName" required
@@ -110,7 +106,7 @@ function UserPage() {
                 }/>
             </FormControl>
           </Box>
-          <Box mb={2}>
+          <Box sx={{p: 2}}>
             <FormControl>
               <InputLabel htmlFor="component-outlined">City:</InputLabel>
               <OutlinedInput id="component-outlined" label="city" required
@@ -120,7 +116,7 @@ function UserPage() {
                 }/>
             </FormControl>
           </Box>
-          <Box mb={2}>
+          <Box sx={{p: 2}}>
             <FormControl>
               <InputLabel htmlFor="component-outlined">Region:</InputLabel>
               <OutlinedInput id="component-outlined" label="region" required
@@ -170,16 +166,16 @@ function UserPage() {
               sx={
                 {width: '100%'}
             }>
-              <Button color="primary"
-                onClick={Save}>Save</Button>
+              <Button color="primary" // when alert popups and when save clicked- saves user info 
+                onClick={Save}>Save</Button> 
             </Alert>
           </Snackbar>
           <Box>
             <Button sx={
                 {margin: 1}
               }
-              variant="contained"
-              onClick={handleClick}>Save</Button>
+              variant="contained" // opens alert box when clicked
+              onClick={handleClick}>Save</Button> 
            
           </Box>
         </Box>

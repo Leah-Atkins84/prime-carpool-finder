@@ -5,15 +5,10 @@ import './Nav.css';
 import { useSelector } from 'react-redux';
 import Typography from '@mui/material/Typography';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
-import FactCheckIcon from '@mui/icons-material/FactCheck';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import '@fontsource/roboto/300.css';
-// import '@fontsource/roboto/400.css';
-// import '@fontsource/roboto/500.css';
-// import '@fontsource/roboto/700.css';
+
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -41,7 +36,7 @@ function Nav() {
       
       </Stack>
       <Typography
-         className="nav-title" color="black" variant="h2">Carpool Finder
+         className="nav-title" color="black" variant="h3">Carpool Finder
          <DirectionsCarIcon/>
         </Typography>
    
@@ -54,6 +49,9 @@ function Nav() {
             Login / Register
           </Link>
         )}
+           <Link className="navLink" to="/about">
+          About
+        </Link>
 
         {/* If a user is logged in, show these links */}
         {user.id && (
@@ -66,17 +64,12 @@ function Nav() {
             </Link>
             <Link className="navLink" to="/carpool">
              Carpool List
-             
-             <FactCheckIcon/>
             </Link>
 
             <LogOutButton className="navLink" />
           </>
         )}
 
-        <Link className="navLink" to="/about">
-          About
-        </Link>
       </div>
     </div>
     </ThemeProvider>

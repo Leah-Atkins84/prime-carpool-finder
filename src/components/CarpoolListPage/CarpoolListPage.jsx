@@ -49,7 +49,7 @@ function CarpoolListPage() {
         <>
         <div>
                 <Box 
-                sx={{height: 1 
+                sx={{height: 10 
                 }}
                 ></Box>
                 <div style={

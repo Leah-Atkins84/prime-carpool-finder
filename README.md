@@ -32,6 +32,7 @@ Before you get started, make sure you have the following software installed on y
 - The Adam's cohort
 - My mentors
 - My friends and family for supporting me through this learning curve
+- And to Julian Carlin for all the troubleshooting help
 
 
 

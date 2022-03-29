@@ -7,12 +7,12 @@ import Map from '../Map/Map';
 
 function CarpoolListPage() {
     const dispatch = useDispatch();
-    const carpool = useSelector(store => store.carpool);
+    const carpool = useSelector(store => store.carpool); //       use data from redux
 
     useEffect(() => {
-        dispatch({type: 'FETCH_CARPOOLS'}) // displays the list of users on page load
+        dispatch({type: 'FETCH_CARPOOLS'}) // Dispatches to user saga and displays the list of users on page load
     }, [dispatch])
-
+ // Table for list of users
     const columns = [
         {
             field: 'fullName',

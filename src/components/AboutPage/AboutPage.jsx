@@ -1,9 +1,6 @@
 import React from 'react';
 
-// This is one of our simplest components
-// It doesn't have local state,
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is'
+// This page is for anyone to see
 
 function AboutPage() {
   return (
@@ -25,7 +22,6 @@ function AboutPage() {
           <li>Mapbox API</li>
         </ul>
         </div>
-
         <div>
           <p>Challenges:</p>
           <ul>
@@ -42,11 +38,10 @@ function AboutPage() {
             <li>The Adam's cohort</li>
             <li>All of my amazing friends and family for supporting me through this time!</li>
           </ul>
-          <p>Developed by Leah Atkins.
-          {/* <a href="https://www.linkedin.com/in/leah-atkins-dev-mls/">Linkedin</a><br></br>
-          <a href="https://github.com/Leah-Atkins84">Github</a> */}
- 
-          </p>
+          <h5>Developed by Leah Atkins&nbsp; <a href="https://github.com/Leah-Atkins84">Github </a>||<a href="https://www.linkedin.com/in/leah-atkins-dev-mls/">Linkedin</a></h5>
+      
+            
+         
         </div>
     </div>
   );

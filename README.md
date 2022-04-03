@@ -1,8 +1,8 @@
 
-# Prime Carpool Finder App
+# Prime Carpool Finder 
 This is a carpool finder app that csn be used by students at Prime Digital Academy. The user can create an account that uses their location and some information provided by the user to see a list of other students looking for rides and see locations on a map.
 
-<!-- ## Screenshots  
+ 
 <img width="1378" alt="IMG:screen1" src="https://user-images.githubusercontent.com/91297137/161447206-dee1d001-d6b5-4da6-9c15-6fa0959609ae.png">
 
 
